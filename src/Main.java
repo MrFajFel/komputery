@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,20 +8,18 @@ public class Main {
 
         WindowsKomp win1 = new WindowsKomp("Abc123","Lenovo");
         MacKomp mac1 = new MacKomp("Ade235","Apple");
-
-        win1.uruchom();
-        win1.zepsujSie();
-
-        System.out.println("--------------------");
-
-        mac1.uruchom();
-        mac1.zepsujSie();
-
-        System.out.println("------------------------");
+        
 
         komputery.add(mac1);
         komputery.add(win1);
 
+        for (Komputer k:komputery){
+            System.out.println(k.getClass().getName());
+            k.uruchom();
+            k.zepsujSie();
+            System.out.println("---------------");
+        }
+        Collections.sort(komputery);
 
     }
 }
